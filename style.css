@@ -65,10 +65,16 @@
   background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(136, 4, 4));
   display: grid;
 }
+.dash {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(211, 211, 211, 0.308);
+  margin: 1em 0em;
+}
 
 .add-button {
   cursor: pointer;
-  height: 300px;
+  height: 200px;
   width: 200px;
   background-image: linear-gradient(to right, red, purple);
   color: white;
@@ -83,8 +89,37 @@
   transition-duration: 2s;
 }
 
+.add-button:hover .plus {
+  transform: rotate(-90deg) scale(1.1);
+  transition-duration: 1.5s;
+}
+
 .add-button .plus {
-  font-size: 100px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 170px;
   justify-self: center;
   align-self: center;
+  transition-duration: 1.5s;
+}
+
+.github-icon {
+  width: 20px;
+  height: 20px;
+}
+
+footer {
+  grid-column: 1/3;
+  color: white;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer > a {
+  margin-left: 0.5em;
+}
+
+footer > a:hover {
+  transform: rotate(360deg);
+  transition-duration: 1s;
 }

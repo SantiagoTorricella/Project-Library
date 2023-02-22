@@ -7,6 +7,10 @@
     <title>Library</title>
     <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      href="Images/1200px-Book_icon_(closed)_-_Blue_and_gold.svg.png"
+    />
   </head>
   <body>
     <section class="container">
@@ -15,14 +19,32 @@
         <a href="#"><button>Sign In</button></a>
       </section>
       <section class="side-bar">
-        <div>Div info</div>
-        <div>Books</div>
-        <div>Books Read</div>
-        <div>Pages Read</div>
+        <div class="dash"></div>
+        <div>Personla Information</div>
+        <div class="dash"></div>
+        <div>Books:</div>
+        <div class="book-counter"></div>
+        <div>Books Read:</div>
+        <div class="read-counter"></div>
+        <div>Pages Read:</div>
+        <div class="pages-counter"></div>
+        <div class="dash"></div>
       </section>
       <section class="content">
         <div class="add-button"><div class="plus">+</div></div>
       </section>
+      <footer>
+        <p>
+          Copyright ©
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Santiago Torricella
+        </p>
+        <a href="https://github.com/SantiagoTorricella" target="_blank">
+          <img src="Images/github.svg" alt="github-icon" class="github-icon" />
+        </a>
+      </footer>
     </section>
   </body>
 </html>

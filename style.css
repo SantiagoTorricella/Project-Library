@@ -111,6 +111,15 @@
   display: none;
 }
 
+#myForm {
+  background-color: white;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50vh;
+  left: 50vw;
+}
+
 /* footer */
 footer {
   grid-column: 1/3;

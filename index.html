@@ -20,7 +20,7 @@
       </section>
       <section class="side-bar">
         <div class="dash"></div>
-        <div>Personla Information</div>
+        <div>Personal Information</div>
         <div class="dash"></div>
         <div>Books:</div>
         <div class="book-counter"></div>
@@ -31,8 +31,11 @@
         <div class="dash"></div>
       </section>
       <section class="content">
-        <div class="add-button"><div class="plus">+</div></div>
+        <div class="add-button">
+          <button class="plus" onclick="openForm()">+</button>
+        </div>
       </section>
+
       <footer>
         <p>
           Copyright ©
@@ -45,6 +48,21 @@
           <img src="Images/github.svg" alt="github-icon" class="github-icon" />
         </a>
       </footer>
+
+      <div class="form-popup hidden" id="myForm">
+        <form class="add-book-form" id="addBookForm">
+          <h4>Add a New Book</h4>
+          <label for="book-name">Book Name:</label>
+          <input type="text" name="book-name" id="bookName" required />
+          <label for="author">Author:</label>
+          <input type="text" name="author" id="author" required />
+          <label for="pages">Number of Pages:</label>
+          <input type="number" name="pages" id="pages" required />
+          <label for="read">Did you finished it?</label>
+          <input type="checkbox" name="read" id="readOrNotRead" />
+          <button type="submit">Sumbit</button>
+        </form>
+      </div>
     </section>
   </body>
 </html>

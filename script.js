@@ -1,10 +1,11 @@
 // Nodes references //
 const addBook = document.querySelector(".add-book");
+const form = document.querySelector("#myForm");
 
 // Variables //
 let myLibrary = [];
 
-// Clases //
+// Classes //
 class Book {
   constructor(
     title = "Unknown",
@@ -21,3 +22,9 @@ class Book {
 
 // Functions //
 function addBookToLibrary(book) {}
+
+function openForm() {
+  if (form.classList.contains("hidden")) {
+    form.classList.remove("hidden");
+  } else form.classList.add("hidden");
+}

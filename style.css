@@ -120,6 +120,10 @@
   left: 50vw;
 }
 
+#addBookForm {
+  background-color: white;
+}
+
 /* footer */
 footer {
   grid-column: 1/3;

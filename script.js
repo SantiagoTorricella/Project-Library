@@ -5,7 +5,7 @@ const form = document.querySelector("#myForm");
 // Variables //
 let myLibrary = [];
 
-// Classes //
+// Classes and constructors //
 class Book {
   constructor(
     title = "Unknown",

@@ -13,6 +13,10 @@
   font-family: "Roboto Condensed";
 }
 
+.blurredElement {
+  filter: blur(1px);
+}
+
 /* Nav Bar */
 
 .nav-bar {
@@ -112,16 +116,39 @@
 }
 
 #myForm {
-  background-color: white;
+  background-color: rgba(66, 66, 66, 0.8);
   position: absolute;
-  width: 100px;
-  height: 100px;
-  top: 50vh;
-  left: 50vw;
+  width: 500px;
+  height: 500px;
+  justify-self: center;
+  align-self: center;
 }
 
 #addBookForm {
-  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  height: 500px;
+  color: white;
+}
+
+#addBookForm > h4 {
+  align-self: center;
+  justify-self: center;
+}
+
+.form-fill {
+  display: flex;
+  flex-direction: column;
+  grid-row: 2/3;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.button-sumbit {
+  grid-row: 3/4;
+  align-self: center;
+  justify-self: center;
 }
 
 /* footer */

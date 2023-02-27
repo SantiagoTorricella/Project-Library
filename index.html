@@ -52,15 +52,25 @@
       <div class="form-popup hidden" id="myForm">
         <form class="add-book-form" id="addBookForm">
           <h4>Add a New Book</h4>
-          <label for="book-name">Book Name:</label>
-          <input type="text" name="book-name" id="bookName" required />
-          <label for="author">Author:</label>
-          <input type="text" name="author" id="author" required />
-          <label for="pages">Number of Pages:</label>
-          <input type="number" name="pages" id="pages" required />
-          <label for="read">Did you finished it?</label>
-          <input type="checkbox" name="read" id="readOrNotRead" />
-          <button type="submit">Sumbit</button>
+          <div class="form-fill">
+            <div>
+              <label for="book-name">Book Name:</label>
+              <input type="text" name="book-name" id="bookName" required />
+            </div>
+            <div>
+              <label for="author">Author:</label>
+              <input type="text" name="author" id="author" required />
+            </div>
+            <div>
+              <label for="pages">Number of Pages:</label>
+              <input type="number" name="pages" id="pages" required />
+            </div>
+          </div>
+          <div class="button-sumbit">
+            <label for="read">Did you finished it?</label>
+            <input type="checkbox" name="read" id="readOrNotRead" />
+            <button class="sumbit-button" type="submit">Sumbit</button>
+          </div>
         </form>
       </div>
     </section>

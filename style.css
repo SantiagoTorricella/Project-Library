@@ -151,6 +151,32 @@
   justify-self: center;
 }
 
+.book-box {
+  color: white;
+  background-image: linear-gradient(to right, red, purple);
+  height: 200px;
+  width: 200px;
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 1em;
+}
+
+.title-box {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.box-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.box-buttons > * {
+  margin: 0.5em;
+}
+
 /* footer */
 footer {
   grid-column: 1/3;

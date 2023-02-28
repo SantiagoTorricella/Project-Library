@@ -5,19 +5,13 @@ const navBar = document.querySelector(".nav-bar");
 const sideBar = document.querySelector(".side-bar");
 const content = document.querySelector(".content");
 const sumbitButton = document.querySelector(".sumbit-button");
-const read = document.querySelector(".readOrNotRead");
 
 // Variables //
 let myLibrary = [];
 
 // Classes and constructors //
 class Book {
-  constructor(
-    title = "aguante instituto de cordoba",
-    author = "el decano",
-    pages = "0",
-    read = false
-  ) {
+  constructor(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -45,7 +39,7 @@ function getBook() {
   const title = document.getElementById("bookName").value;
   const author = document.getElementById("author").value;
   const pages = document.getElementById("pages").value;
-  const read = document.getElementById("readOrNotRead").value;
+  const read = document.getElementById("readOrNotRead").checked;
 
   return new Book(title, author, pages, read);
 }
@@ -60,6 +54,7 @@ function addBookToLibrary() {
   myLibrary.push(newBook);
   let newBox = createBookBox(newBook);
   content.appendChild(newBox);
+  console.log(newBook.read);
 }
 
 function createBookBox(book) {
@@ -68,36 +63,41 @@ function createBookBox(book) {
 
   let title = document.createElement("h1");
   title.innerText = book.title;
+  title.classList.add("title-box");
   box.appendChild(title);
 
-  let author = document.createElement("h3");
-  author.innerText = book.author;
+  let author = document.createElement("h4");
+  author.innerText = "-" + book.author;
+  author.classList.add("author-box");
   box.appendChild(author);
 
   let pages = document.createElement("h4");
-  pages.innerText = "pages:" + book.pages;
+  pages.innerText = "Pages:" + " " + book.pages;
   box.appendChild(pages);
 
   let read = document.createElement("h5");
   read.innerText = bookRead(book.read);
-  if (book.read == "checked") read.style.backgroundColor = "green";
+  if (book.read == true) read.style.backgroundColor = "green";
   else read.style.backgroundColor = "red";
   box.appendChild(read);
 
   let boxButtons = document.createElement("div");
-  boxButtons.classList.add("box");
+  boxButtons.classList.add("box-buttons");
 
   let readButton = document.createElement("div");
   readButton.innerText = "Read📗";
   boxButtons.appendChild(readButton);
 
   readButton.addEventListener("click", () => {
-    if (book.read == true) read.style.backgroundColor = "green";
-    else read.style.backgroundColor = "red";
+    if (book.read == true) read.style.backgroundColor = "red";
+    else read.style.backgroundColor = "green";
+    book.read = !book.read;
+    read.innerText = bookRead(book.read);
   });
 
   let deleteButton = document.createElement("div");
   deleteButton.innerText = "Delete⛔";
+  boxButtons.appendChild(deleteButton);
 
   deleteButton.addEventListener("click", () => {
     let index = myLibrary.indexOf(book);
@@ -108,7 +108,7 @@ function createBookBox(book) {
   return box;
 }
 function bookRead(a) {
-  if (a == "checked") {
+  if (a == true) {
     return "Read";
   } else {
     return "Not Read";

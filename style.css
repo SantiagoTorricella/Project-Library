@@ -68,6 +68,7 @@
 .content {
   background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(136, 4, 4));
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .dash {
@@ -175,6 +176,14 @@
 
 .box-buttons > * {
   margin: 0.5em;
+}
+
+.read-button {
+  cursor: pointer;
+}
+
+.delete-button {
+  cursor: pointer;
 }
 
 /* footer */

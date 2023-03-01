@@ -35,6 +35,11 @@ function openForm() {
   }
 }
 
+function emptyBook(a) {
+  if (a.title == "" || a.author == "" || a.pages == "") return false;
+  else return true;
+}
+
 function getBook() {
   const title = document.getElementById("bookName").value;
   const author = document.getElementById("author").value;
@@ -51,10 +56,14 @@ sumbitButton.addEventListener("click", (e) => {
 
 function addBookToLibrary() {
   let newBook = getBook();
-  myLibrary.push(newBook);
-  let newBox = createBookBox(newBook);
-  content.appendChild(newBox);
-  console.log(newBook.read);
+  if (emptyBook(newBook)) {
+    myLibrary.push(newBook);
+    let newBox = createBookBox(newBook);
+    content.appendChild(newBox);
+    console.log(newBook.read);
+    openForm();
+    document.getElementById("addBookForm").reset();
+  } else alert("Your book has empty fields");
 }
 
 function createBookBox(book) {
@@ -86,6 +95,7 @@ function createBookBox(book) {
 
   let readButton = document.createElement("div");
   readButton.innerText = "Read📗";
+  readButton.classList.add("read-button");
   boxButtons.appendChild(readButton);
 
   readButton.addEventListener("click", () => {
@@ -97,6 +107,7 @@ function createBookBox(book) {
 
   let deleteButton = document.createElement("div");
   deleteButton.innerText = "Delete⛔";
+  deleteButton.classList.add("delete-button");
   boxButtons.appendChild(deleteButton);
 
   deleteButton.addEventListener("click", () => {
